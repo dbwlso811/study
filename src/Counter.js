@@ -5,6 +5,7 @@ class Counter extends Component {
         number: 0,
         fixedNumber: 0
     };
+
     render() {
         const {number, fixedNumber} = this.state; // state를 조회 할때는 this.state로 조회함
         return (
@@ -14,17 +15,15 @@ class Counter extends Component {
                 <button
                     // onClick을 통해 버튼이 클릭되었을때 호출할 함수를 지정
                     onClick={() => {
-                        // this.setState를 사용하여 state에 새로운 값을 넣을 수 있음
-                        this.setState(prevState => {
-                            return {
-                                number: prevState.number + 1
-                            };
-                        });
-                        // 위 코드와 아래 코드는 완전히 똑같은 기능을 함
-                        // 아래코드는 함수에서 바로 객체를 반환 한다는 의미
-                        this.setState(prevState => ({
-                            number: prevState.number + 1
-                        }));
+                        this.setState(
+                            {
+                                number: number + 1
+                            },
+                            () => {
+                                console.log('방금 setState가 호출 되었습니다.');
+                                console.log(this.state);
+                            }
+                        );
                     }}
                 >
                     +1
