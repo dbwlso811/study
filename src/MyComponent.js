@@ -2,6 +2,14 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 class Mycomponent extends Component {
+    static defaultProps = {
+        name: '기본이름'
+    };
+    static propTypes = {
+        name: PropTypes.string,
+        favoriteNumber: PropTypes.number.isRequired
+    };
+
     render() {
         const {name, favoriteNumber, children} = this.props; // 비구조화 할당
         return (
@@ -16,12 +24,4 @@ class Mycomponent extends Component {
     }
 }
 
-Mycomponent.defaultProps = {
-    name: '기본이름'
-};
-// 무조건 문자 형태로 전달
-Mycomponent.proptype = {
-    name: PropTypes.string,
-    favoriteNumber: PropTypes.number.isRequired
-};
 export default Mycomponent;
