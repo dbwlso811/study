@@ -18,4 +18,5 @@ Mycomponent.defaultProps = {
 Mycomponent.proptype = {
     name: PropTypes.string
 };
+
 export default Mycomponent;
