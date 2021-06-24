@@ -5,15 +5,17 @@ class Counter extends Component {
         super(props);
         // state의 초깃값 설정하기
         this.state = {
-            number: 0
+            number: 0,
+            fixedNumber: 0
         };
     }
 
     render() {
-        const {number} = this.state; // state를 조회 할때는 this.state로 조회함
+        const {number, fixedNumber} = this.state; // state를 조회 할때는 this.state로 조회함
         return (
             <div>
                 <h1>{number}</h1>
+                <h2>바뀌지 않는 값: {fixedNumber}</h2>
                 <button
                     // onClick을 통해 버튼이 클릭되었을때 호출할 함수를 지정
                     onClick={() => {
