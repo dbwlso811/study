@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 
 const Counter = () => {
-    const [ number,setNumber ] = useState(0);
+    //const [ 초깃값, ? ] = useState(0);
+    const [ number ,setNumber ] = useState(0);
     const onClick = () => {
-      alert(number + 1);
+        // setNumber(초깃값 + 1)
+        setNumber(number+1)
     };
     return (
         <div>
